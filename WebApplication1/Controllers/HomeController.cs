@@ -4,9 +4,11 @@ namespace WebApplication1.Controllers;
 
 public class HomeController : Controller
 {
-    public IActionResult Index()
+    public IActionResult index()
     {
         return View();
+
+
     }
 
 
