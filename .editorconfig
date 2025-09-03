@@ -1,0 +1,58 @@
+# Editor configuration, see https://editorconfig.org
+root = true
+
+[*]
+charset = utf-8
+indent_style = space
+
+### Indentation and spacing
+indent_size = 4
+tab_width = 4
+
+# GitHub Copilot Chat commit message generation instructions
+github.copilot.chat.commitMessageGeneration.instructions = |
+  - 使用 Conventional Commits 格式：<type>(scope): <subject>
+  - type 僅限 feat, fix, docs, style, refactor, perf, test, build, ci, chore, revert
+  - 用中文撰寫 subject，使用祈使句，長度不超過 72 字符
+  - 如需補充，加入英文 body 段落（可選），每行不超過 72 字符
+  - 若適用，列出關鍵變更點作為項目符號
+  - 若有重大變更，加入 BREAKING CHANGE: 說明
+  - 僅根據實際 diff 與變更檔案撰寫，不要捏造內容
+
+# csharp_use_continuous_indent_inside_parens
+csharp_use_continuous_indent_inside_parens = true
+
+#dotnet properties
+[*.cs]
+csharp_style_var_for_built_in_types = false
+dotnet_diagnostic.IDE0008.severity = error # var preferences
+
+dotnet_style_namespace_match_folder = true
+dotnet_diagnostic.IDE0130.severity = suggestion # namespace structure not match folder
+
+csharp_prefer_simple_using_statement = true
+dotnet_diagnostic.IDE0063.severity = error # prefer to use simple using statment
+
+dotnet_diagnostic.CS1591.severity = none # ignore documentation missing before rosly fix #41640
+dotnet_diagnostic.IDE0005.severity = error # Remove unnecessary import
+dotnet_diagnostic.IDE0100.severity = error # Remove unnecessary equality operator
+
+csharp_style_namespace_declarations = file_scoped:error
+dotnet_diagnostic.IDE0161.severity = error # prefer file_scoped, otherwise show error
+
+# suggestion first, too much formating issues
+dotnet_diagnostic.IDE0055.severity = suggestion # Fix formatting
+
+# Enforce naming rules (IDE1006) as build error
+dotnet_diagnostic.IDE1006.severity = error
+
+# Naming style: PascalCase for methods
+dotnet_naming_rule.methods_should_be_pascal_case.severity = error
+dotnet_naming_rule.methods_should_be_pascal_case.symbols  = all_methods
+dotnet_naming_rule.methods_should_be_pascal_case.style    = pascal_case_style
+
+dotnet_naming_symbols.all_methods.applicable_kinds = method
+dotnet_naming_symbols.all_methods.applicable_accessibilities = *
+dotnet_naming_symbols.all_methods.required_modifiers =
+
+dotnet_naming_style.pascal_case_style.capitalization = pascal_case
