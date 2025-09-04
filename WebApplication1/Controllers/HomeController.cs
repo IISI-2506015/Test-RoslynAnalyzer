@@ -14,7 +14,9 @@ public class HomeController : Controller
     // P.S. 也能在 CICD 時 操作cli ，自動建置時修正
     public IActionResult index()
     {
-        return View();
+          return View();
+
+
 
 
     }
