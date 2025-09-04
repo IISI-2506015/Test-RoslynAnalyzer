@@ -49,7 +49,7 @@ dotnet_diagnostic.IDE0055.severity = error # Fix formatting
 # 修復格式化問題，顯示為錯誤
 
 # =============================================================================
-# 命名規則
+# 命名規則 - 根據命名規範精簡版
 # =============================================================================
 # 強制執行命名規則 (IDE1006) 作為建置錯誤
 dotnet_diagnostic.IDE1006.severity = error
@@ -105,23 +105,10 @@ dotnet_diagnostic.IDE0063.severity = error # prefer to use simple using statment
 dotnet_diagnostic.CS1591.severity = none # ignore documentation missing before rosly fix #41640
 # 忽略缺少文檔註解的警告（在 Roslyn 修復 #41640 之前）
 
-# 方法命名規則
-dotnet_naming_rule.methods_should_be_pascal_case.severity = error
-# 方法應使用 PascalCase 的嚴重性為錯誤
-dotnet_naming_rule.methods_should_be_pascal_case.symbols  = all_methods
-# 適用於所有方法符號
-dotnet_naming_rule.methods_should_be_pascal_case.style    = pascal_case_style
-# 使用 pascal_case_style 樣式
+# =============================================================================
+# 命名規則 - 根據命名規範精簡版
+# =============================================================================
 
-dotnet_naming_symbols.all_methods.applicable_kinds = method
-# 適用於方法類型
-dotnet_naming_symbols.all_methods.applicable_accessibilities = *
-# 適用於所有存取修飾詞
-dotnet_naming_symbols.all_methods.required_modifiers =
-# 不需要特定修飾詞
-
-dotnet_naming_style.pascal_case_style.capitalization = pascal_case
-# PascalCase 樣式的首字母大寫規則
 
 # =============================================================================
 # 其他文件類型規則
