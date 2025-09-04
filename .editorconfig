@@ -1,15 +1,65 @@
 # Editor configuration, see https://editorconfig.org
+# 編輯器配置文件，詳見 https://editorconfig.org
 root = true
 
+# =============================================================================
+# 通用排版規則 - 適用於所有文件類型
+# =============================================================================
 [*]
+# 適用於所有文件的通用設置
 charset = utf-8
+# 字符編碼設置為 UTF-8
+end_of_line = crlf
+# 行尾符號使用 CRLF (Windows 風格)
+insert_final_newline = true
+# 文件結尾自動插入換行符
+trim_trailing_whitespace = true
+# 自動移除行尾空白字符
 indent_style = space
+# 縮進樣式使用空格而不是 Tab
 
 ### Indentation and spacing
+### 縮進和間距設置
 indent_size = 4
+# 縮進大小為 4 個空格
 tab_width = 4
+# Tab 寬度為 4 個空格
+max_line_length = 120
+# 最大行長度為 120 字符
 
+# =============================================================================
+# 存檔時自動排版設置
+# =============================================================================
+# 啟用存檔時自動格式化
+dotnet_style_qualification_for_field = false:error
+# 字段不需要 this 限定符
+dotnet_style_qualification_for_property = false:error
+# 屬性不需要 this 限定符
+dotnet_style_qualification_for_method = false:error
+# 方法不需要 this 限定符
+dotnet_style_qualification_for_event = false:error
+# 事件不需要 this 限定符
+
+# 強制執行一致的代碼格式
+dotnet_diagnostic.IDE0055.severity = error # Remove unnecessary import
+# 移除不必要的 import，違反時顯示錯誤
+dotnet_diagnostic.IDE0100.severity = error # Remove unnecessary equality operator
+# 移除不必要的相等運算子，違反時顯示錯誤
+dotnet_diagnostic.IDE0055.severity = error # Fix formatting
+# 修復格式化問題，顯示為錯誤
+
+# =============================================================================
+# 命名規則
+# =============================================================================
+# 強制執行命名規則 (IDE1006) 作為建置錯誤
+dotnet_diagnostic.IDE1006.severity = error
+# 命名規則違反時顯示錯誤
+
+# =============================================================================
+# GitHub Copilot 設置
+# =============================================================================
 # GitHub Copilot Chat commit message generation instructions
+# GitHub Copilot Chat 提交訊息生成指令
 github.copilot.chat.commitMessageGeneration.instructions = |
   - 使用 Conventional Commits 格式：<type>(scope): <subject>
   - type 僅限 feat, fix, docs, style, refactor, perf, test, build, ci, chore, revert
@@ -19,40 +69,81 @@ github.copilot.chat.commitMessageGeneration.instructions = |
   - 若有重大變更，加入 BREAKING CHANGE: 說明
   - 僅根據實際 diff 與變更檔案撰寫，不要捏造內容
 
-# csharp_use_continuous_indent_inside_parens
-csharp_use_continuous_indent_inside_parens = true
-
-#dotnet properties
+# =============================================================================
+# C# 特定規則
+# =============================================================================
 [*.cs]
+# 適用於所有 C# 文件的設置
+
+# 縮進和括號設置
+csharp_use_continuous_indent_inside_parens = true
+# C# 在括號內使用連續縮進
+
+# var 關鍵字使用規則
 csharp_style_var_for_built_in_types = false
+# 對於內建類型不使用 var 關鍵字
 dotnet_diagnostic.IDE0008.severity = error # var preferences
+# var 偏好設置，違反時顯示錯誤
 
+# 命名空間規則
 dotnet_style_namespace_match_folder = true
+# 命名空間結構應與資料夾結構匹配
 dotnet_diagnostic.IDE0130.severity = suggestion # namespace structure not match folder
-
-csharp_prefer_simple_using_statement = true
-dotnet_diagnostic.IDE0063.severity = error # prefer to use simple using statment
-
-dotnet_diagnostic.CS1591.severity = none # ignore documentation missing before rosly fix #41640
-dotnet_diagnostic.IDE0005.severity = error # Remove unnecessary import
-dotnet_diagnostic.IDE0100.severity = error # Remove unnecessary equality operator
-
+# 命名空間結構不匹配資料夾時顯示建議
 csharp_style_namespace_declarations = file_scoped:error
+# 偏好使用檔案範圍的命名空間宣告
 dotnet_diagnostic.IDE0161.severity = error # prefer file_scoped, otherwise show error
+# 偏好檔案範圍命名空間，否則顯示錯誤
 
-# suggestion first, too much formating issues
-dotnet_diagnostic.IDE0055.severity = suggestion # Fix formatting
+# using 語句規則
+csharp_prefer_simple_using_statement = true
+# 偏好使用簡單的 using 語句
+dotnet_diagnostic.IDE0063.severity = error # prefer to use simple using statment
+# 偏好使用簡單的 using 語句，違反時顯示錯誤
 
-# Enforce naming rules (IDE1006) as build error
-dotnet_diagnostic.IDE1006.severity = error
+# 文檔註解設置
+dotnet_diagnostic.CS1591.severity = none # ignore documentation missing before rosly fix #41640
+# 忽略缺少文檔註解的警告（在 Roslyn 修復 #41640 之前）
 
-# Naming style: PascalCase for methods
+# 方法命名規則
 dotnet_naming_rule.methods_should_be_pascal_case.severity = error
+# 方法應使用 PascalCase 的嚴重性為錯誤
 dotnet_naming_rule.methods_should_be_pascal_case.symbols  = all_methods
+# 適用於所有方法符號
 dotnet_naming_rule.methods_should_be_pascal_case.style    = pascal_case_style
+# 使用 pascal_case_style 樣式
 
 dotnet_naming_symbols.all_methods.applicable_kinds = method
+# 適用於方法類型
 dotnet_naming_symbols.all_methods.applicable_accessibilities = *
+# 適用於所有存取修飾詞
 dotnet_naming_symbols.all_methods.required_modifiers =
+# 不需要特定修飾詞
 
 dotnet_naming_style.pascal_case_style.capitalization = pascal_case
+# PascalCase 樣式的首字母大寫規則
+
+# =============================================================================
+# 其他文件類型規則
+# =============================================================================
+[*.{json,js,ts,jsx,tsx}]
+# JavaScript/TypeScript 文件規則
+indent_size = 2
+# JavaScript/TypeScript 使用 2 空格縮進
+
+[*.{xml,html,cshtml}]
+# XML/HTML 文件規則
+indent_size = 2
+# XML/HTML 使用 2 空格縮進
+
+[*.{css,scss,less}]
+# CSS 文件規則
+indent_size = 2
+# CSS 使用 2 空格縮進
+
+[*.md]
+# Markdown 文件規則
+trim_trailing_whitespace = false
+# Markdown 文件保留行尾空白（用於換行）
+max_line_length = off
+# Markdown 不限制行長度
