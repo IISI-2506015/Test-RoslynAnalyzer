@@ -31,3 +31,4 @@ C:\Users\2506015\source\repos\Test-RoslynAnalyzer\WebApplication1\obj\Debug\net8
 C:\Users\2506015\source\repos\Test-RoslynAnalyzer\WebApplication1\obj\Debug\net8.0\WebApplication1.pdb
 C:\Users\2506015\source\repos\Test-RoslynAnalyzer\WebApplication1\obj\Debug\net8.0\WebApplication1.genruntimeconfig.cache
 C:\Users\2506015\source\repos\Test-RoslynAnalyzer\WebApplication1\obj\Debug\net8.0\ref\WebApplication1.dll
+C:\Users\2506015\source\repos\Test-RoslynAnalyzer\WebApplication1\obj\Debug\net8.0\WebApplication1.sourcelink.json

@@ -34,12 +34,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 3,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 5,
@@ -50,8 +46,7 @@
               "RelativeToolTip": "WebApplication1\\Pages\\Index.cshtml.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T09:59:21.514Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-03T09:59:21.514Z"
             },
             {
               "$type": "Document",
@@ -63,8 +58,7 @@
               "RelativeToolTip": "WebApplication1\\Services\\TestService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T09:48:16.161Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-03T09:48:16.161Z"
             },
             {
               "$type": "Document",
@@ -76,8 +70,7 @@
               "RelativeToolTip": "WebApplication1\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-09-03T09:13:45.477Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-03T09:13:45.477Z"
             },
             {
               "$type": "Document",
@@ -87,7 +80,7 @@
               "RelativeDocumentMoniker": "WebApplication1\\Controllers\\HomeController.cs",
               "ToolTip": "C:\\Users\\2506015\\source\\repos\\Test-RoslynAnalyzer\\WebApplication1\\Controllers\\HomeController.cs",
               "RelativeToolTip": "WebApplication1\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-03T09:11:16.081Z",
               "EditorCaption": ""
@@ -102,8 +95,7 @@
               "RelativeToolTip": "WebApplication1\\Pages\\Index.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-09-03T09:09:53.136Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-03T09:09:53.136Z"
             },
             {
               "$type": "Document",
@@ -115,8 +107,7 @@
               "RelativeToolTip": "WebApplication1\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T09:07:40.363Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-03T09:07:40.363Z"
             }
           ]
         }
