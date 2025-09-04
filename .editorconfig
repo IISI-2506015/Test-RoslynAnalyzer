@@ -109,6 +109,172 @@ dotnet_diagnostic.CS1591.severity = none # ignore documentation missing before r
 # 命名規則 - 根據命名規範精簡版
 # =============================================================================
 
+# 強制執行命名規則 (IDE1006) 作為建置錯誤
+dotnet_diagnostic.IDE1006.severity = error
+# 命名規則違反時顯示錯誤
+
+# 命名空間規則 - 使用 PascalCase
+dotnet_style_namespace_match_folder = true
+# 命名空間結構應與資料夾結構匹配
+
+# 類型命名規則 - 使用 PascalCase
+dotnet_naming_rule.types_should_be_pascal_case.severity = error
+dotnet_naming_rule.types_should_be_pascal_case.symbols = types
+dotnet_naming_rule.types_should_be_pascal_case.style = pascal_case_style
+
+dotnet_naming_symbols.types.applicable_kinds = class, struct, interface, enum, delegate
+dotnet_naming_symbols.types.applicable_accessibilities = public, internal, private, protected, protected_internal, private_protected
+dotnet_naming_symbols.types.required_file_paths = **/*.cs
+dotnet_naming_symbols.types.excluded_file_paths = **/Service/**, **/Services/**, **/Controller/**, **/Controllers/**, **/Dto/**, **/DTO/**, **/Dtos/**, **/DTOS/**, **/Query/**, **/Queries/**
+
+dotnet_naming_style.pascal_case_style.required_prefix = 
+dotnet_naming_style.pascal_case_style.required_suffix = 
+dotnet_naming_style.pascal_case_style.word_separator = 
+dotnet_naming_style.pascal_case_style.capitalization = pascal_case
+
+# 介面命名規則 - 以 I 開頭
+dotnet_naming_rule.interface_types_should_be_prefixed_with_i.severity = error
+dotnet_naming_rule.interface_types_should_be_prefixed_with_i.symbols = interface_types
+dotnet_naming_rule.interface_types_should_be_prefixed_with_i.style = interface_naming_style
+
+dotnet_naming_symbols.interface_types.applicable_kinds = interface
+dotnet_naming_symbols.interface_types.applicable_accessibilities = public, internal, private, protected, protected_internal, private_protected
+
+dotnet_naming_style.interface_naming_style.required_prefix = I
+dotnet_naming_style.interface_naming_style.required_suffix = 
+dotnet_naming_style.interface_naming_style.word_separator = 
+dotnet_naming_style.interface_naming_style.capitalization = pascal_case
+
+# 私有欄位命名規則 - 以 _ 開頭
+dotnet_naming_rule.private_fields_should_be_prefixed_with_underscore.severity = error
+dotnet_naming_rule.private_fields_should_be_prefixed_with_underscore.symbols = private_fields
+dotnet_naming_rule.private_fields_should_be_prefixed_with_underscore.style = private_field_naming_style
+
+dotnet_naming_symbols.private_fields.applicable_kinds = field
+dotnet_naming_symbols.private_fields.applicable_accessibilities = private
+
+dotnet_naming_style.private_field_naming_style.required_prefix = _
+dotnet_naming_style.private_field_naming_style.required_suffix = 
+dotnet_naming_style.private_field_naming_style.word_separator = 
+dotnet_naming_style.private_field_naming_style.capitalization = camel_case
+
+# 常數命名規則 - 使用 PascalCase
+dotnet_naming_rule.constants_should_be_pascal_case.severity = error
+dotnet_naming_rule.constants_should_be_pascal_case.symbols = constants
+dotnet_naming_rule.constants_should_be_pascal_case.style = pascal_case_style
+
+dotnet_naming_symbols.constants.applicable_kinds = field
+dotnet_naming_symbols.constants.required_modifiers = const
+
+# 枚舉命名規則 - 以 Enum 結尾
+dotnet_naming_rule.enum_types_should_end_with_enum.severity = error
+dotnet_naming_rule.enum_types_should_end_with_enum.symbols = enum_types
+dotnet_naming_rule.enum_types_should_end_with_enum.style = enum_naming_style
+
+dotnet_naming_symbols.enum_types.applicable_kinds = enum
+dotnet_naming_symbols.enum_types.applicable_accessibilities = public, internal, private, protected, protected_internal, private_protected
+
+dotnet_naming_style.enum_naming_style.required_prefix = 
+dotnet_naming_style.enum_naming_style.required_suffix = Enum
+dotnet_naming_style.enum_naming_style.word_separator = 
+dotnet_naming_style.enum_naming_style.capitalization = pascal_case
+
+# 方法參數和區域變數命名規則 - 使用 camelCase
+dotnet_naming_rule.parameters_and_locals_should_be_camel_case.severity = error
+dotnet_naming_rule.parameters_and_locals_should_be_camel_case.symbols = parameters_and_locals
+dotnet_naming_rule.parameters_and_locals_should_be_camel_case.style = camel_case_style
+
+dotnet_naming_symbols.parameters_and_locals.applicable_kinds = parameter, local
+dotnet_naming_symbols.parameters_and_locals.applicable_accessibilities = public, internal, private, protected, protected_internal, private_protected
+
+dotnet_naming_style.camel_case_style.required_prefix = 
+dotnet_naming_style.camel_case_style.required_suffix = 
+dotnet_naming_style.camel_case_style.word_separator = 
+dotnet_naming_style.camel_case_style.capitalization = camel_case
+
+# =============================================================================
+# 特定資料夾的命名規則
+# =============================================================================
+
+# Service 資料夾下的類型命名規則 - 以 Service 結尾
+dotnet_naming_rule.service_folder_types_should_end_with_service.severity = error
+dotnet_naming_rule.service_folder_types_should_end_with_service.symbols = service_folder_types
+dotnet_naming_rule.service_folder_types_should_end_with_service.style = service_naming_style
+
+dotnet_naming_symbols.service_folder_types.applicable_kinds = class, struct, interface
+dotnet_naming_symbols.service_folder_types.applicable_accessibilities = public, internal, private, protected, protected_internal, private_protected
+dotnet_naming_symbols.service_folder_types.required_file_extensions = cs
+dotnet_naming_symbols.service_folder_types.required_file_paths = **/Service/**, **/Services/**
+
+dotnet_naming_style.service_naming_style.required_prefix = 
+dotnet_naming_style.service_naming_style.required_suffix = Service
+dotnet_naming_style.service_naming_style.word_separator = 
+dotnet_naming_style.service_naming_style.capitalization = pascal_case
+
+# Controller 資料夾下的類型命名規則 - 以 Controller 結尾
+dotnet_naming_rule.controller_folder_types_should_end_with_controller.severity = error
+dotnet_naming_rule.controller_folder_types_should_end_with_controller.symbols = controller_folder_types
+dotnet_naming_rule.controller_folder_types_should_end_with_controller.style = controller_naming_style
+
+dotnet_naming_symbols.controller_folder_types.applicable_kinds = class, struct, interface
+dotnet_naming_symbols.controller_folder_types.applicable_accessibilities = public, internal, private, protected, protected_internal, private_protected
+dotnet_naming_symbols.controller_folder_types.required_file_extensions = cs
+dotnet_naming_symbols.controller_folder_types.required_file_paths = **/Controller/**, **/Controllers/**
+
+dotnet_naming_style.controller_naming_style.required_prefix = 
+dotnet_naming_style.controller_naming_style.required_suffix = Controller
+dotnet_naming_style.controller_naming_style.word_separator = 
+dotnet_naming_style.controller_naming_style.capitalization = pascal_case
+
+# DTO 資料夾下的類型命名規則 - 以 Dto 結尾
+dotnet_naming_rule.dto_folder_types_should_end_with_dto.severity = error
+dotnet_naming_rule.dto_folder_types_should_end_with_dto.symbols = dto_folder_types
+dotnet_naming_rule.dto_folder_types_should_end_with_dto.style = dto_naming_style
+
+dotnet_naming_symbols.dto_folder_types.applicable_kinds = class, struct, interface
+dotnet_naming_symbols.dto_folder_types.applicable_accessibilities = public, internal, private, protected, protected_internal, private_protected
+dotnet_naming_symbols.dto_folder_types.required_file_extensions = cs
+dotnet_naming_symbols.dto_folder_types.required_file_paths = **/Dto/**, **/DTO/**, **/Dtos/**, **/DTOS/**
+
+dotnet_naming_style.dto_naming_style.required_prefix = 
+dotnet_naming_style.dto_naming_style.required_suffix = Dto
+dotnet_naming_style.dto_naming_style.word_separator = 
+dotnet_naming_style.dto_naming_style.capitalization = pascal_case
+
+# Query 資料夾下的類型命名規則 - 以 Query 結尾
+dotnet_naming_rule.query_folder_types_should_end_with_query.severity = error
+dotnet_naming_rule.query_folder_types_should_end_with_query.symbols = query_folder_types
+dotnet_naming_rule.query_folder_types_should_end_with_query.style = query_naming_style
+
+dotnet_naming_symbols.query_folder_types.applicable_kinds = class, struct, interface
+dotnet_naming_symbols.query_folder_types.applicable_accessibilities = public, internal, private, protected, protected_internal, private_protected
+dotnet_naming_symbols.query_folder_types.required_file_extensions = cs
+dotnet_naming_symbols.query_folder_types.required_file_paths = **/Query/**, **/Queries/**
+
+dotnet_naming_style.query_naming_style.required_prefix = 
+dotnet_naming_style.query_naming_style.required_suffix = Query
+dotnet_naming_style.query_naming_style.word_separator = 
+dotnet_naming_style.query_naming_style.capitalization = pascal_case
+
+# =============================================================================
+# 通用命名規則 (適用於不在特定資料夾中的檔案)
+# =============================================================================
+
+# 類型命名規則 - 使用 PascalCase (不包含特定後綴)
+dotnet_naming_rule.general_types_should_be_pascal_case.severity = error
+dotnet_naming_rule.general_types_should_be_pascal_case.symbols = general_types
+dotnet_naming_rule.general_types_should_be_pascal_case.style = general_pascal_case_style
+
+dotnet_naming_symbols.general_types.applicable_kinds = class, struct, interface
+dotnet_naming_symbols.general_types.applicable_accessibilities = public, internal, private, protected, protected_internal, private_protected
+dotnet_naming_symbols.general_types.required_file_extensions = cs
+dotnet_naming_symbols.general_types.required_file_paths = **/*.cs
+dotnet_naming_symbols.general_types.excluded_file_paths = **/Service/**, **/Services/**, **/Controller/**, **/Controllers/**, **/Dto/**, **/DTO/**, **/Dtos/**, **/DTOS/**, **/Query/**, **/Queries/**
+
+dotnet_naming_style.general_pascal_case_style.required_prefix = 
+dotnet_naming_style.general_pascal_case_style.required_suffix = 
+dotnet_naming_style.general_pascal_case_style.word_separator = 
+dotnet_naming_style.general_pascal_case_style.capitalization = pascal_case
 
 # =============================================================================
 # 其他文件類型規則
@@ -134,3 +300,4 @@ trim_trailing_whitespace = false
 # Markdown 文件保留行尾空白（用於換行）
 max_line_length = off
 # Markdown 不限制行長度
+ 
